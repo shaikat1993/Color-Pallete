@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3DC5C590-33DD-4666-8F31-D0FB54825576"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "420713E3-553A-48B1-9AC4-7AD2933A228D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPaletteApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "420713E3-553A-48B1-9AC4-7AD2933A228D - 96911d276b030e1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1111">
+               </Location>
+               <Location
+                  uuid = "420713E3-553A-48B1-9AC4-7AD2933A228D - 96911d276b030e31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "223">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B93005E-E53E-49C3-B376-738233674AC9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPaletteApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B93005E-E53E-49C3-B376-738233674AC9 - 4f8d9d01df74db34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorPaletteApp.ViewController.setupNavigationBar() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "0B93005E-E53E-49C3-B376-738233674AC9 - 96911d276b030db5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "632">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DFAF287-FBEF-4D58-9E0D-7ECC6640C9A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPaletteApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2DFAF287-FBEF-4D58-9E0D-7ECC6640C9A2 - e43a4c228569e2f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorPaletteApp.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "265">
+               </Location>
+               <Location
+                  uuid = "2DFAF287-FBEF-4D58-9E0D-7ECC6640C9A2 - e43a4c228569ddea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorPaletteApp.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B790E568-E00B-4B58-A269-0086ABB4DB9F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPaletteApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "saveBtnPressed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B790E568-E00B-4B58-A269-0086ABB4DB9F - dd354e237375cc5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.saveBtnPressed() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "706">
+               </Location>
+               <Location
+                  uuid = "B790E568-E00B-4B58-A269-0086ABB4DB9F - 295e230a34d6eddc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorPaletteApp.ViewController.saveBtnPressed() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "B790E568-E00B-4B58-A269-0086ABB4DB9F - dd354e237375ca4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.saveBtnPressed() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "197">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "933C8439-BD9A-4A31-94C1-01CD49A04C60"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorPaletteApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "saveBtnPressed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "933C8439-BD9A-4A31-94C1-01CD49A04C60 - dd354e237375c07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.saveBtnPressed() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "771">
+               </Location>
+               <Location
+                  uuid = "933C8439-BD9A-4A31-94C1-01CD49A04C60 - dd354e237375ce6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;ColorPaletteApp.Color&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in ColorPaletteApp.ViewController.saveBtnPressed() -&gt; ()"
+                  moduleName = "ColorPaletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shaikat/Desktop/Assignment/colorpaletteapp_ios/ColorPaletteApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "420">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
