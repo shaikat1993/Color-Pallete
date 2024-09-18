@@ -22,7 +22,7 @@ class ViewController: UIViewController, StoryboardInstantiable {
     }
     
     // MARK: - Properties
-    let networkManager = NetworkManager()
+    private let networkManager: NetworkManager
     private var favoriteColors: [Color] = []
     var selectedIndexPath: IndexPath?
     var colorActionType: ColorActionType = .create
@@ -43,6 +43,18 @@ class ViewController: UIViewController, StoryboardInstantiable {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    // Dependency Injection
+    init(networkManager: NetworkManager = NetworkManager()) {
+        self.networkManager = networkManager
+        super.init(nibName: nil,
+                   bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.networkManager = NetworkManager()
+        super.init(coder: coder)
+    }
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -111,10 +123,9 @@ class ViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func handleLogout() {
-        //UserDefaultsManager.shared.isLoggedIn = false
-        let username = UserDefaultsManager.shared.storedUsername
-        
-        KeychainHelper.shared.deleteToken(for: username)
+        //deleting token from key chain
+        KeychainHelper.shared.deleteToken(for: UserDefaultsManager.shared.storedUsername)
+        // setting storedUsername empty
         UserDefaultsManager.shared.storedUsername = ""
         navigationController?.popViewController(animated: true)
         PPHUD.dismiss()
@@ -146,7 +157,7 @@ class ViewController: UIViewController, StoryboardInstantiable {
                 ColorStorage.shared.saveFavoriteColor(newColor)
                 self.loadFavoriteColors()
             } else {
-                PPHUD.showError(withStatus: "Failed to create color")
+                PPHUD.dismiss()
                 print("Failed to create color: \(error ?? "Unknown error")")
             }
         }
@@ -168,7 +179,6 @@ class ViewController: UIViewController, StoryboardInstantiable {
                 }
             } else {
                 PPHUD.dismiss()
-                //PPHUD.showError(withStatus: "Failed to update color")
                 print("Failed to update color: \(error ?? "Unknown error")")
             }
         }
@@ -188,7 +198,6 @@ class ViewController: UIViewController, StoryboardInstantiable {
                 }
             } else {
                 PPHUD.dismiss()
-                //PPHUD.showError(withStatus: "Failed to delete color")
                 print("Failed to delete color: \(error ?? "Unknown error")")
             }
         }

@@ -1,11 +1,3 @@
-//
-//  PPHUD.swift
-//  Common
-//
-//  Created by Shamsur Rahman on 29/5/22.
-//  Copyright © 2022 Pathao Inc. All rights reserved.
-//
-
 import UIKit
 import SVProgressHUD
 

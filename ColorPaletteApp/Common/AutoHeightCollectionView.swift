@@ -1,11 +1,3 @@
-//
-//  AutoHeightCollectionView.swift
-//  Component
-//
-//  Created by Shamiul on 21/1/19.
-//  Copyright © 2019 Shamiul. All rights reserved.
-//
-
 import UIKit
 
 

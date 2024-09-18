@@ -1,10 +1,3 @@
-//
-//  ColorCell.swift
-//  ColorPaletteApp
-//
-//  Created by Md Sadidur Rahman on 17/9/24.
-//
-
 import UIKit
 
 class ColorCell: UICollectionViewCell {

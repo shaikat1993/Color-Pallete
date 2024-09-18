@@ -1,11 +1,3 @@
-//
-//  AutoHeightScrollProtocol.swift
-//  Component
-//
-//  Created by Ashik uddin Ahmad on 13/3/19.
-//  Copyright © 2019 Shamiul. All rights reserved.
-//
-
 import UIKit
 
 public protocol AutoHeightScrollProtocol {

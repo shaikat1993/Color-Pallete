@@ -1,10 +1,3 @@
-//
-//  UserDefaultsManager.swift
-//  ColorPaletteApp
-//
-//  Created by Md Sadidur Rahman on 16/9/24.
-//
-
 import UIKit
 
 class UserDefaultsManager {
