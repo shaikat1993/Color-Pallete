@@ -30,8 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if !username.isEmpty,
             let _ = token {
-       // if UserDefaultsManager.shared.isLoggedIn {
-            // User is logged in, show the main view controller
             let mainVC = ViewController.instance()
             navigationController.viewControllers = [LoginVC.instance()] // Set LoginVC as root
             navigationController.pushViewController(mainVC, animated: false) // Push the main VC
@@ -40,20 +38,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let loginVC = LoginVC.instance()
             navigationController.viewControllers = [loginVC] // Set LoginVC as root
         }
-        
-        //-----------------------//
-        
-        // Check if the user is logged in
-//        if UserDefaultsManager.shared.isLoggedIn {
-//            // User is logged in, show the main view controller
-//            let mainVC = ViewController.instance()
-//            navigationController.viewControllers = [LoginVC.instance()] // Set LoginVC as root
-//            navigationController.pushViewController(mainVC, animated: false) // Push the main VC
-//        } else {
-//            // User is not logged in, show the login view controller
-//            let loginVC = LoginVC.instance()
-//            navigationController.viewControllers = [loginVC] // Set LoginVC as root
-//        }
         
         window.rootViewController = navigationController
         self.window = window

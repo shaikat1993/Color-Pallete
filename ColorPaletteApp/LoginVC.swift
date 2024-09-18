@@ -44,6 +44,7 @@ class LoginVC: UIViewController,StoryboardInstantiable {
         passwordTextField.placeholder = "Password"
         loginButton.setTitle("Login",
                              for: .normal)
+        updateLoginButtonState()
         errorLabel.isHidden = true
     }
     
@@ -86,13 +87,20 @@ class LoginVC: UIViewController,StoryboardInstantiable {
             $0?.resignFirstResponder()
             
         })
-        let validUsername = "fsc-oboe"
-        let validPassword = "zYghYGem"
         
+//        // for testing purpose
+//        let validUsername = "fsc-oboe"
+//        let validPassword = "zYghYGem"
+        
+        let validUsername = usernameTextField.text ?? ""
+        let validPassword = passwordTextField.text ?? ""
+        
+        PPHUD.show()
         networkManager.login(username: validUsername,
                              password: validPassword) { [weak self] token, error in
             DispatchQueue.main.async {
                 if let token = token {
+                    PPHUD.dismiss()
                     TokenHandler.save(token, for: validUsername)
                     UserDefaultsManager.shared.storedUsername = validUsername
                     
@@ -106,6 +114,7 @@ class LoginVC: UIViewController,StoryboardInstantiable {
                     // Proceed to the next screen
                     self?.errorLabel.isHidden = true
                 } else if let error = error {
+                    PPHUD.showError(withStatus: "Something went wrong!")
                     self?.handleLoginError(error: error)
                 }
             }
@@ -113,37 +122,31 @@ class LoginVC: UIViewController,StoryboardInstantiable {
     }
     
     func handleLoginSuccess(token: String) {
-        // Store the token securely using Keychain or another secure storage
-        
-       
-        
-        // TokenManager.shared.storeToken(token: token)
-        
-        // Login successful
-        //TokenHandler.save(token)
-        
-        // set isLoggedIn(for testing purpose)
-        UserDefaultsManager.shared.isLoggedIn = true
-        
+        //UserDefaultsManager.shared.isLoggedIn = true
         // Navigate to the main screen
         let mainVC = ViewController.instance()
         navigationController?.pushViewController(mainVC, animated: true)
     }
     
     func handleLoginError(error: String) {
-        errorLabel.text = "Login failed: \(error)"
+        errorLabel.text = "Username or Password is incorrect."
         errorLabel.isHidden = false
+    }
+    
+    // update the login button state
+    private func updateLoginButtonState() {
+        let isUsernameEmpty = usernameTextField.text?.isEmpty ?? true
+        let isPasswordEmpty = passwordTextField.text?.isEmpty ?? true
+        loginButton.isEnabled = (!isUsernameEmpty &&
+                                !isPasswordEmpty)
+        loginButton.backgroundColor = loginButton.isEnabled ? #colorLiteral(red: 0, green: 0.4192638397, blue: 0.7753102183, alpha: 1) : #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
     }
 }
 
 extension LoginVC {
     // Function to handle text field changes and enable/disable login button
     @objc func textFieldsDidChange() {
-        // Enable login button only when both username and password fields are not empty
-        let isUsernameEmpty = usernameTextField.text?.isEmpty ?? true
-        let isPasswordEmpty = passwordTextField.text?.isEmpty ?? true
-        
-        loginButton.isEnabled = (!isUsernameEmpty &&
-                                !isPasswordEmpty)
+        errorLabel.isHidden = true
+        updateLoginButtonState()
     }
 }

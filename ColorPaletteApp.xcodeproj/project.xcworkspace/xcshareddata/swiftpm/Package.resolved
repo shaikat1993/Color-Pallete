@@ -1,16 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "EFColorPicker",
-        "repositoryURL": "https://github.com/EFPrefix/EFColorPicker",
-        "state": {
-          "branch": null,
-          "revision": "bb5435e626455c6e268f9da5ad7d543f0c605d7d",
-          "version": "5.2.1"
-        }
+  "pins" : [
+    {
+      "identity" : "efcolorpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EFPrefix/EFColorPicker",
+      "state" : {
+        "revision" : "bb5435e626455c6e268f9da5ad7d543f0c605d7d",
+        "version" : "5.2.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "svprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SVProgressHUD/SVProgressHUD.git",
+      "state" : {
+        "revision" : "c33f7c775ba7feea6047a1fc3257f2e5863b44f7",
+        "version" : "2.3.1"
+      }
+    }
+  ],
+  "version" : 2
 }

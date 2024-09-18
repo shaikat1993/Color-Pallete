@@ -106,16 +106,18 @@ class ViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - User Actions
     @IBAction func logoutButtonPressed(_ sender: Any) {
+        PPHUD.show()
         handleLogout()
     }
     
     private func handleLogout() {
-        UserDefaultsManager.shared.isLoggedIn = false
+        //UserDefaultsManager.shared.isLoggedIn = false
         let username = UserDefaultsManager.shared.storedUsername
         
         KeychainHelper.shared.deleteToken(for: username)
         UserDefaultsManager.shared.storedUsername = ""
         navigationController?.popViewController(animated: true)
+        PPHUD.dismiss()
     }
     
     // MARK: - Save Button Action
@@ -136,12 +138,15 @@ class ViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Create/Update/Delete Methods
     private func createColor(color: UIColor) {
+        PPHUD.show()
         networkManager.create(color: color.asString()) { [weak self] color, error in
             guard let self = self else { return }
             if let newColor = color {
+                PPHUD.dismiss()
                 ColorStorage.shared.saveFavoriteColor(newColor)
                 self.loadFavoriteColors()
             } else {
+                PPHUD.showError(withStatus: "Failed to create color")
                 print("Failed to create color: \(error ?? "Unknown error")")
             }
         }
@@ -149,32 +154,41 @@ class ViewController: UIViewController, StoryboardInstantiable {
     
     private func updateColor(at indexPath: IndexPath, 
                              with color: UIColor) {
+        PPHUD.show()
         let colorId = favoriteColors[indexPath.item].id
         networkManager.updateColorForId(colorId, 
                                         color: color.asString()) { [weak self] color, error in
             guard let self = self else { return }
             if let updatedColor = color {
+                PPHUD.dismiss()
                 ColorStorage.shared.updateFavoriteColor(updatedColor)
                 self.favoriteColors[indexPath.item] = updatedColor
                 DispatchQueue.main.async {
                     self.colorCollectionView.reloadItems(at: [indexPath])
                 }
             } else {
+                PPHUD.dismiss()
+                //PPHUD.showError(withStatus: "Failed to update color")
                 print("Failed to update color: \(error ?? "Unknown error")")
             }
         }
     }
     
     private func deleteColor(at indexPath: IndexPath) {
+        PPHUD.show()
         let color = favoriteColors[indexPath.item]
         networkManager.deleteColorWithId(color.id) { [weak self] success, error in
+            
             guard let self = self else { return }
             if success {
+                PPHUD.dismiss()
                 ColorStorage.shared.removeFavoriteColor(color)
                 DispatchQueue.main.async {
                     self.loadFavoriteColors()
                 }
             } else {
+                PPHUD.dismiss()
+                //PPHUD.showError(withStatus: "Failed to delete color")
                 print("Failed to delete color: \(error ?? "Unknown error")")
             }
         }

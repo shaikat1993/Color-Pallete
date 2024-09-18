@@ -12,18 +12,7 @@ class UserDefaultsManager {
     private init() { }
     
     private enum UserDefaultsKeys: String {
-        case isLoggedIn = "isLoggedIn"
         case storedUsername = "storedUsername"
-    }
-    
-    var isLoggedIn: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue)
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
-            UserDefaults.standard.synchronize() // Force a sync
-        }
     }
     
     var storedUsername: String {

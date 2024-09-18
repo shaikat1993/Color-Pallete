@@ -26,6 +26,8 @@
 		259346F4268C9D9100358780 /* EFColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 259346F3268C9D9100358780 /* EFColorPicker */; };
 		259346F7268D89DA00358780 /* UIColor+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259346F6268D89DA00358780 /* UIColor+Strings.swift */; };
 		259346F9268DA77200358780 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259346F8268DA77200358780 /* Login.swift */; };
+		923F6CE62C9AF5B500F05DDE /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 923F6CE52C9AF5B500F05DDE /* SVProgressHUD */; };
+		923F6CE92C9AF61800F05DDE /* PPHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F6CE82C9AF61700F05DDE /* PPHUD.swift */; };
 		9264C9C62C98D985007C471F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264C9C52C98D985007C471F /* UIView.swift */; };
 		9264C9C82C98E052007C471F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264C9C72C98E052007C471F /* PresentationController.swift */; };
 		9264CA072C98F8F8007C471F /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264CA052C98F8F8007C471F /* ColorCell.swift */; };
@@ -62,6 +64,7 @@
 		259346F0268C8F5200358780 /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		259346F6268D89DA00358780 /* UIColor+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Strings.swift"; sourceTree = "<group>"; };
 		259346F8268DA77200358780 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		923F6CE82C9AF61700F05DDE /* PPHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPHUD.swift; sourceTree = "<group>"; };
 		9264C9C52C98D985007C471F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		9264C9C72C98E052007C471F /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		9264CA052C98F8F8007C471F /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923F6CE62C9AF5B500F05DDE /* SVProgressHUD in Frameworks */,
 				259346F4268C9D9100358780 /* EFColorPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,17 +116,18 @@
 				259346C3268C89C200358780 /* AppDelegate.swift */,
 				259346C5268C89C200358780 /* SceneDelegate.swift */,
 				9295566B2C989BF800471420 /* LoginVC.swift */,
+				9264CA132C99D05E007C471F /* CollectionCell */,
 				259346C7268C89C200358780 /* ViewController.swift */,
 				259346CC268C89C400358780 /* Assets.xcassets */,
 				259346CE268C89C400358780 /* LaunchScreen.storyboard */,
 				259346C9268C89C200358780 /* Main.storyboard */,
-				9264CA132C99D05E007C471F /* CollectionCell */,
 				259346E9268C8BB500358780 /* Encoding */,
 				259346E6268C8A7300358780 /* EndPoint */,
 				259346F5268D89DA00358780 /* Extensions */,
 				259346D7268C8A2B00358780 /* Manager */,
 				259346E3268C8A4D00358780 /* Model */,
 				259346DA268C8A4400358780 /* Service */,
+				923F6CE72C9AF5E600F05DDE /* Common */,
 			);
 			path = ColorPaletteApp;
 			sourceTree = "<group>";
@@ -179,14 +184,22 @@
 		259346F5268D89DA00358780 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9264CA0F2C99CF83007C471F /* AutoHeightCollectionView.swift */,
-				9264CA102C99CF83007C471F /* AutoHeightScrollProtocol.swift */,
 				259346F6268D89DA00358780 /* UIColor+Strings.swift */,
 				9264C9C52C98D985007C471F /* UIView.swift */,
-				9264C9C72C98E052007C471F /* PresentationController.swift */,
-				9264CA092C98FFA9007C471F /* FlowLayout.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		923F6CE72C9AF5E600F05DDE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9264C9C72C98E052007C471F /* PresentationController.swift */,
+				9264CA092C98FFA9007C471F /* FlowLayout.swift */,
+				9264CA0F2C99CF83007C471F /* AutoHeightCollectionView.swift */,
+				9264CA102C99CF83007C471F /* AutoHeightScrollProtocol.swift */,
+				923F6CE82C9AF61700F05DDE /* PPHUD.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9264CA132C99D05E007C471F /* CollectionCell */ = {
@@ -218,6 +231,7 @@
 			name = ColorPaletteApp;
 			packageProductDependencies = (
 				259346F3268C9D9100358780 /* EFColorPicker */,
+				923F6CE52C9AF5B500F05DDE /* SVProgressHUD */,
 			);
 			productName = ColorPaletteApp;
 			productReference = 259346C0268C89C200358780 /* ColorPaletteApp.app */;
@@ -248,6 +262,7 @@
 			mainGroup = 259346B7268C89C100358780;
 			packageReferences = (
 				259346F2268C9D9100358780 /* XCRemoteSwiftPackageReference "EFColorPicker" */,
+				923F6CE42C9AF5B500F05DDE /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 			);
 			productRefGroup = 259346C1268C89C200358780 /* Products */;
 			projectDirPath = "";
@@ -285,6 +300,7 @@
 				9264CA152C99EE1A007C471F /* KeychainHelper.swift in Sources */,
 				9295566E2C98A50000471420 /* UserDefaultsManager.swift in Sources */,
 				9264CA122C99CF84007C471F /* AutoHeightScrollProtocol.swift in Sources */,
+				923F6CE92C9AF61800F05DDE /* PPHUD.swift in Sources */,
 				259346D9268C8A2B00358780 /* NetworkManager.swift in Sources */,
 				9264CA112C99CF84007C471F /* AutoHeightCollectionView.swift in Sources */,
 				9264C9C82C98E052007C471F /* PresentationController.swift in Sources */,
@@ -513,6 +529,14 @@
 				minimumVersion = 5.2.1;
 			};
 		};
+		923F6CE42C9AF5B500F05DDE /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -520,6 +544,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 259346F2268C9D9100358780 /* XCRemoteSwiftPackageReference "EFColorPicker" */;
 			productName = EFColorPicker;
+		};
+		923F6CE52C9AF5B500F05DDE /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 923F6CE42C9AF5B500F05DDE /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

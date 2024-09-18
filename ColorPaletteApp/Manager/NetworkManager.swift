@@ -145,42 +145,6 @@ struct NetworkManager {
         executeUpdate(attempts: 3)
     }
     
-    // MARK: - Private
-
-//    private func parseData(data: Data?, response: URLResponse?, completion: ColorCompletionHandler)  {
-//        guard let responseData = data else {
-//            completion(nil, NetworkResponse.noData.rawValue)
-//            return
-//        }
-////        if let jsonString = String(data: responseData, encoding: .utf8) {
-////               print("Received JSON: \(jsonString)")
-////           } else {
-////               print("Failed to convert data to string.")
-////           }
-//           
-//        // Attempt to decode the data into a Color object
-//           do {
-//               let apiResponse = try JSONDecoder().decode(Color.self, from: responseData)
-//               completion(apiResponse, nil)
-//           } catch {
-//               print("Decoding error: \(error)")
-//               completion(nil, NetworkResponse.unableToDecode.rawValue)
-//           }
-//        
-////        do {
-//////            let r = String(data: data ?? Data(), encoding: .utf8)
-//////            print(r)
-////            
-////            let apiResponse = try JSONDecoder().decode(Color.self, from: responseData)
-////            completion(apiResponse, nil)
-////        }
-////        catch {
-////            print(error)
-////            completion(nil, NetworkResponse.unableToDecode.rawValue)
-////        }
-//    }
-    
-    
     private func parseData(data: Data?, response: URLResponse?, completion: ColorCompletionHandler) {
         guard let responseData = data else {
             completion(nil, NetworkResponse.noData.rawValue)
@@ -192,7 +156,7 @@ struct NetworkManager {
             let apiResponse = try JSONDecoder().decode(Color.self, from: responseData)
             
             // Convert the `data` string into an array of `CGFloat`
-            if let colorArray = parseColorData(apiResponse.data) {
+            if let _ = parseColorData(apiResponse.data) {
                 // Assuming you need to create a `Color` instance to return to the completion
                 completion(Color(data: apiResponse.data,
                                  id: apiResponse.id),
