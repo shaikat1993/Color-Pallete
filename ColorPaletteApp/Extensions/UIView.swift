@@ -470,17 +470,7 @@ public extension UIView {
         return nil
     }
     
-    func addNibView(inBundle bundle: Bundle? = nil) -> UIView {
-      let name = String(describing: type(of: self))
-      let selfNib = UINib(nibName: name, bundle: bundle)
-      guard let view = selfNib.instantiate(withOwner: self, options: nil).first
-        as? UIView else { return UIView() }
-      
-      view.frame = bounds
-      view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-      addSubview(view)
-      return view
-    }
+    
 }
 
 
@@ -736,7 +726,7 @@ public extension UIView {
         activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
         activityIndicator.center = self.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        //activityIndicator.style = UIActivityIndicatorView.Style.gray
         activityIndicator.startAnimating()
         isUserInteractionEnabled = false
         

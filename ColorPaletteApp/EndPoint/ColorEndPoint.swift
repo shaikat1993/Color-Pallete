@@ -4,9 +4,9 @@ import UIKit
 enum ColorAPI {
     case login(username: String, password: String)
     case create(color: String)
-    case update(id: Int, color: String)
-    case getColor(id: Int)
-    case delete(id: Int)
+    case update(id: String, color: String)
+    case getColor(id: String)
+    case delete(id: String)
 }
 
 extension ColorAPI: EndpointType {

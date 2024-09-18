@@ -44,7 +44,7 @@ struct NetworkManager {
     // MARK: - GET COLOR
 
     /// Checks the API for any data that is saved with the given `Id`. Returns the data object or `nil` if there is no data.
-    func getColorWithId(_ id: Int, completion: @escaping ColorCompletionHandler)  {
+    func getColorWithId(_ id: String, completion: @escaping ColorCompletionHandler)  {
         router.perform(task: { success, failure in
                         self.router.request(route: .getColor(id: id),
                                             success: success, failure: failure) },
@@ -63,47 +63,86 @@ struct NetworkManager {
     /// If successful, the server responds with the sent `Color` and associated id.
     /// The `id` can be used to fetch the same color `getColorWithId:completion:` or to update it `updateColorForId:color:completion`.
     func create(color: String, completion: @escaping ColorCompletionHandler) {
-        router.perform(task: { success, failure in
-                        self.router.request(route: .create(color: color),
-                                            success: success, failure: failure) },
-                       success: { response, data in
-                        self.parseData(data: data, response: response, completion: completion)
-                        
-                       },
-                       failure: { error in
-                        completion(nil, error.debugDescription)
-                       })
+        func executeUpdate(attempts: Int) {
+            // Stop retrying if no attempts are left
+            guard attempts > 0 else {
+                completion(nil, "Max retry attempts reached.")
+                return
+            }
+            router.perform(task: { success, failure in
+                self.router.request(route: .create(color: color),
+                                    success: success, failure: failure) },
+                           success: { response, data in
+                self.parseData(data: data, response: response, completion: completion)
+                
+            },
+                           failure: { error in
+                print("Request failed, retrying... Attempts left: \(attempts - 1)")
+                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                    executeUpdate(attempts: attempts - 1)
+                }
+                completion(nil, error.debugDescription)
+            })
+        }
+        // Start the request with 3 attempts
+        executeUpdate(attempts: 3)
     }
     
     // MARK: - UPDATE COLOR
 
     /// Updates the existing `Color` data to the server.
     /// The server responds with the sent `Color` and associated id, that can be used to fetch the same color. (`getColorWithId:completion:`)
-    func updateColorForId(_ id: Int, color: String, completion: @escaping ColorCompletionHandler) {
-        router.perform(task: { success, failure in
-                        self.router.request(route: .update(id: id, color: color),
-                                            success: success, failure: failure) },
-                       success: { response, data in
-                        self.parseData(data: data, response: response, completion: completion)
-                        
-                       },
-                       failure: { error in
-                        completion(nil, error.debugDescription)
-                       })
+    func updateColorForId(_ id: String, color: String, completion: @escaping ColorCompletionHandler) {
+        func executeUpdate(attempts: Int) {
+            // Stop retrying if no attempts are left
+            guard attempts > 0 else {
+                completion(nil, "Max retry attempts reached.")
+                return
+            }
+            router.perform(task: { success, failure in
+                self.router.request(route: .update(id: id, color: color),
+                                    success: success, failure: failure) },
+                           success: { response, data in
+                self.parseData(data: data, response: response, completion: completion)
+                
+            },
+                           failure: { error in
+                print("Request failed, retrying... Attempts left: \(attempts - 1)")
+                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                    executeUpdate(attempts: attempts - 1)
+                }
+                completion(nil, error.debugDescription)
+            })
+        }
+        // Start the request with 3 attempts
+        executeUpdate(attempts: 3)
     }
     
     /// Deletes the `Color` with the given `Id` from the server.
-    func deleteColorWithId(_ id: Int, completion: @escaping DeleteCompletionHandler) {
-        router.perform(task: { success, failure in
-            self.router.request(route: .delete(id: id),
-                                success: success, failure: failure) },
-                       success: { response, data in
-            // Handle the success response here. Depending on the API, it might return some data or just a success message.
-            completion(true, nil)
-        },
-                       failure: { error in
-            completion(false, error.debugDescription)
-        })
+    func deleteColorWithId(_ id: String, completion: @escaping DeleteCompletionHandler) {
+        func executeUpdate(attempts: Int) {
+            // Stop retrying if no attempts are left
+            guard attempts > 0 else {
+                completion(false, "Max retry attempts reached.")
+                return
+            }
+            router.perform(task: { success, failure in
+                self.router.request(route: .delete(id: id),
+                                    success: success, failure: failure) },
+                           success: { response, data in
+                // Handle the success response here. Depending on the API, it might return some data or just a success message.
+                completion(true, nil)
+            },
+                           failure: { error in
+                print("Request failed, retrying... Attempts left: \(attempts - 1)")
+                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                    executeUpdate(attempts: attempts - 1)
+                }
+                completion(false, error.debugDescription)
+            })
+        }
+        // Start the request with 3 attempts
+        executeUpdate(attempts: 3)
     }
     
     // MARK: - Private
@@ -155,7 +194,9 @@ struct NetworkManager {
             // Convert the `data` string into an array of `CGFloat`
             if let colorArray = parseColorData(apiResponse.data) {
                 // Assuming you need to create a `Color` instance to return to the completion
-                completion(Color(data: apiResponse.data, id: apiResponse.id), nil)
+                completion(Color(data: apiResponse.data,
+                                 id: apiResponse.id),
+                           nil)
                 // Here, you can also set your `UIColor` using the `colorArray`
 //                let color = UIColor(rgba: colorArray)
 //                print("Color created: \(color)")

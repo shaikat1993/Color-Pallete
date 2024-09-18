@@ -56,7 +56,6 @@ class LoginVC: UIViewController,StoryboardInstantiable {
         for char in title {
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex,
                                  repeats: false) { [weak self] timer in
-                // self?.titleLabel.text?.append(char)
                 let coloredChar = NSAttributedString(string: String(char), attributes: [
                     .foregroundColor: UIColor.random()
                 ])
